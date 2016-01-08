@@ -12,4 +12,4 @@ A small example project made using the Spring Framework that shows how to config
 3. Run `java -jar target/demo-0.0.1-SNAPSHOT.jar`. The jar contains an embedded web server that will start up on port 8080.
 
 ## Credits
-* [Spring Boot]()
+* [Spring Boot](http://projects.spring.io/spring-boot/)
