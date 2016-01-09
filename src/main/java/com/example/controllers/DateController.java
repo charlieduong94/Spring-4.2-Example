@@ -10,31 +10,30 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.models.Date;
 import com.example.services.DateService;
-
+import com.example.services.DateServiceImpl;
 /**
  * A simple controller for that handles requests to the "/date" path
- * 
+ *
  * @author charlie
  */
 @RestController
 public class DateController{
 	private DateService dateService;
-	
+
 	/**
 	 * The @PostConstruct annotation specifies that right after the creation of the DateController,
 	 * run this init method. All the method does is initialize our dateService object
 	 */
 	@PostConstruct
 	public void init(){
-		dateService = new DateService();
+		dateService = new DateServiceImpl();
 	}
-	
+
 	/**
 	 * A simple callback for a GET request to the path "/date"
-	 * 
+	 *
 	 * All this function does is return the current time in milliseconds
-	 * 
-	 * @param name
+	 *
 	 * @return JSON containing the current millis
 	 */
 	@RequestMapping(
