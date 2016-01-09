@@ -4,7 +4,7 @@ A small example project made using the Spring Framework that shows how to config
 
 ## Usage
 ### Requirements
-* [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 ### How to run
 1. Clone this repo.
