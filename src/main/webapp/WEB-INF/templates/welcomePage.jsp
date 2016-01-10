@@ -21,7 +21,7 @@
       <p>
         Spring Boot was used to create this project because it handles all of the bootstrapping and removes
         the need for us to use manage the project with XML. The original starter project can be found
-        <a href="http://projects.spring.io/spring-boot/">here</a>
+        <a href="http://projects.spring.io/spring-boot/">here</a>.
       </p>
       <p>
         Here is a randomly generated quote about Spring Boot retrieved from
@@ -33,12 +33,12 @@
         <div class="col-md-offset-3 col-md-6" >
           <blockquote>
             <p><em>"${quote}"</em></p>
-            <footer>Random Quote #${quoteID} on Spring Boot's ${quoteType}</footer>
+            <footer>Random Quote #${quoteID} about Spring Boot's ${quoteType}</footer>
           </blockquote>
         </div>
       </div>
       <p>Try going to <a href="http://localhost:8080/date">http://localhost:8080/date</a> and
-        <a href="http://localhost:8080/hello/world">http://localhost:8080/hello/world</a>.<br>
+        <a href="http://localhost:8080/hello/world">http://localhost:8080/hello/world</a>.
         The first URL returns some JSON and the second just returns plain text.
       </p>
       <p>

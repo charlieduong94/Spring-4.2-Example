@@ -19,6 +19,7 @@ import com.example.services.QuoteService;
  */
 @RestController
 public class IndexController{
+	
 	@Autowired
 	QuoteService quoteService;
 	/**
@@ -30,12 +31,12 @@ public class IndexController{
 			value="/",
 			method = RequestMethod.GET)
 	public ModelAndView getWelcomePage(){
+		// retrieve a quote
 		Quote quote = quoteService.getQuote();
-		System.out.println(quote.getValue().getQuote());
     // Create a ModelAndView object using the welcomePage from "/src/main/webapp/WEB-INF/templates/welcomePage.jsp"
     // Spring is able to find this because of the properties set in the "application.properties" file
     ModelAndView model = new ModelAndView("welcomePage");
-    // add an object with the name message that will be rendered on the view
+    // add objects that can be used in the JSP
     model.addObject("quoteType", quote.getType());
 		model.addObject("quoteID", quote.getValue().getId());
 		model.addObject("quote", quote.getValue().getQuote());
