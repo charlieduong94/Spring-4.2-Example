@@ -1,19 +1,19 @@
 package com.example.services;
 
-import com.example.models.Date;
+import com.example.models.Quote;
 
 /**
- * This is the interface for a simple Date service
+ * This is the interface for a retrieving a quote
  *
  * It is generally a good practice to abstract services so that they can be easily swapped
  * later on. For this situation, it's pretty much over kill.
  * @author charlie
  */
-public interface DateService {
+public interface QuoteService {
 	/**
-	 * Retrieves the current time in milliseconds
+	 * Retrieves a random quote
 	 *
 	 * @return Date object containing the current date in milliseconds
 	 */
-	public Date getDate();
+	public Quote getQuote();
 }

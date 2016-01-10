@@ -24,7 +24,8 @@ public class HelloController{
 			value="/hello/{name}", // this is the path that callback is mapped to
 			method = RequestMethod.GET, // this specifies that this requires a GET to activated
 			produces="text/plain") // this specifies the type of data the request will produce
-	public String hello(@PathVariable String name){ // the @PathVariables specifies that the
-		return "Hello " + name + "!";						// method requires a path variable after "/hello/"
+	public String hello(@PathVariable String name){
+		// @PathVariable above specifies that the variable is supplied from the path in the url
+		return "Hello " + name + "!\nTry replacing " + name +" in the URL with another word";
 	}
 }
