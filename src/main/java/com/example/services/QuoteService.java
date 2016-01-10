@@ -6,7 +6,7 @@ import com.example.models.Quote;
  * This is the interface for a retrieving a quote
  *
  * It is generally a good practice to abstract services so that they can be easily swapped
- * later on. For this situation, it's pretty much over kill.
+ * later on. 
  * @author charlie
  */
 public interface QuoteService {
