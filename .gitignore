@@ -1,1 +1,8 @@
+# ignore the target directory because there's no point in saving what will
+# be built
 target
+
+# ignore intellij idea specific files
+.idea
+src/main/main.iml
+src/test/test.iml
