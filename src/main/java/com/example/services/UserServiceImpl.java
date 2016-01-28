@@ -9,7 +9,7 @@ import com.example.models.daos.UserDaoImpl;
 import com.example.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 /**
- * This the implementation of a service that generates a random quote.
+ * This the implementation of a service that interacts with the User table in our DB.
  *
  * The @Service annotation specifies that the class is a Service. A service can be
  * given a name if needed as shown below.
@@ -22,33 +22,44 @@ public class UserServiceImpl implements UserService {
 	UserDao dao;
 
 	/**
-	 *	Method for creating a users. The service delegates all of the work over to the data access object.
+	 *	Method for creating a users. The service calls the DAO (Data Access Object) and tells it to
 	 *	This would be where you handle validation.
 	 **/
-	public String createUser(String name, long age){
-			String message = "Could not create user";
-			if(dao.createUser(name, age) != -1){
-				message = "User created";
-			}
-			return message;
+	public Response createUser(String name, long age){
+		int code = 10;
+		String message = "User already exists";
+		if(name == null || age == 0){
+			code = 11;
+			message = "name or age is not valid";
+		}
+		else if(dao.createUser(name.trim(), age) != -1){
+			code = 0;
+			message = "User created";
+		}
+		Response res = new Response();
+		res.setCode(code);
+		res.setRes(message);
+		return res;
 	}
-  public String getUserCount(){
-			String message = "Could not get user count";
-			long userCount = dao.getUserCount();
-			if(userCount != -1){
-				message = "There are " + userCount + " users in the database.";
-			}
-      return message;
+  public Response getUserCount(){
+	  	int code = 20;
+		String message = "Could not get user count";
+		long userCount = dao.getUserCount();
+		if(userCount != -1){
+			code = 0;
+			message = "There are " + userCount + " users in the database.";
+		}
+	    Response res = new Response();
+	    res.setCode(code);
+	    res.setRes(message);
+      	return res;
   }
 
 	public Response getAllUsers(){
-		List<User> users = dao.getAllUsers();
-		// if you need uniform responses, you can do something like this.
-		// the response's body takes in any java object, so you can wrap your dao outputs
-		// into an object like this.
 		Response res = new Response();
-		res.setCode(100);
-		res.setBody(users);
+		List<User> users = dao.getAllUsers();
+		res.setCode(0);
+		res.setRes(users);
 		return res;
 	}
 }

@@ -9,7 +9,7 @@ package com.example.models;
  */
 public class Response {
 	private long code;
-  private Object body;
+  private Object res;
 
   public long getCode(){
     return code;
@@ -17,10 +17,10 @@ public class Response {
   public void setCode(long code){
     this.code = code;
   }
-  public Object getBody(){
-    return body;
+  public Object getRes(){
+    return res;
   }
-  public void setBody(Object body){
-    this.body = body;
+  public void setRes(Object body){
+    this.res = body;
   }
 }

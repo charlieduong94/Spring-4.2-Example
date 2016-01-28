@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/styles.css"/>
   </head>
   <body>
-    <div class="content">
+    <div class="centered-content">
       <a href="http://spring.io">
         <img src="images/spring.png">
       </a>
@@ -40,6 +40,9 @@
       <p>Try going to <a href="http://localhost:8080/date">http://localhost:8080/date</a> and
         <a href="http://localhost:8080/hello/world">http://localhost:8080/hello/world</a>.
         The first URL returns some JSON and the second just returns plain text.
+      </p>
+      <p>
+        Also try going to <a href="http://localhost:8080/users">http://localhost:8080/users</a>. More interesting stuff over there.
       </p>
       <p>
         You can see how each of these routes are being served by checking out the code in the

@@ -1,1 +1,6 @@
 target
+#intellij idea specific files
+.idea
+demo.iml
+src/main/main.iml
+src/test/test.iml

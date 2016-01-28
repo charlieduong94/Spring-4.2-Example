@@ -1,19 +1,19 @@
 package com.example.controllers;
 
-import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
-import java.util.List;
 import com.example.models.User;
 import com.example.models.Response;
 import com.example.services.UserService;
-
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
+
 /**
  * A simple controller for that serves the default page
  *
@@ -32,22 +32,43 @@ public class UserController{
 	@RequestMapping(
 			value="/users/create",
 			method = RequestMethod.POST)
-	public String createUser(@RequestBody User user){
+	public ResponseEntity<Response> createUser(@RequestBody User user){
 		// retrieve a quote
-		return userService.createUser(user.getName(), user.getAge());
+		Response res = userService.createUser(user.getName(), user.getAge());
+		HttpStatus status = HttpStatus.OK;
+		if(res.getCode() != 0){
+			status = HttpStatus.BAD_REQUEST;
+		}
+		return new ResponseEntity<Response>(res, status);
 	}
 	@RequestMapping(
 			value="/users/count",
 			method = RequestMethod.GET)
-	public String getCount(){
-		// retrieve a quote
-		return userService.getUserCount();
+	public ResponseEntity<Response> getCount(){
+		Response res = userService.getUserCount();
+		HttpStatus status = HttpStatus.OK;
+		if(res.getCode() != 0){
+			status = HttpStatus.BAD_REQUEST;
+		}
+		return new ResponseEntity<Response>(res, status);
 	}
 	@RequestMapping(
 			value="/users/all",
 			method = RequestMethod.GET)
-	public Response getAllUsers(){
-		// retrieve a quote
-		return userService.getAllUsers();
+	public ResponseEntity<Response> getAllUsers(){
+		Response res = userService.getAllUsers();
+		HttpStatus status = HttpStatus.OK;
+		if(res.getCode() != 0){
+			status = HttpStatus.BAD_REQUEST;
+		}
+		return new ResponseEntity<Response>(res, status);
+	}
+	@RequestMapping(
+			value="/users",
+			method = RequestMethod.GET)
+	public ModelAndView getPage(){
+		ModelAndView modelAndView = new ModelAndView("usersPage");
+		modelAndView.addObject("users", userService.getAllUsers().getRes());
+		return modelAndView;
 	}
 }

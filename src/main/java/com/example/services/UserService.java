@@ -16,7 +16,7 @@ public interface UserService {
 	 *
 	 * @return Date object containing the current date in milliseconds
 	 */
-	public String createUser(String name, long age);
-  public String getUserCount();
+	public Response createUser(String name, long age);
+    public Response getUserCount();
 	public Response getAllUsers();
 }

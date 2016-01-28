@@ -1,5 +1,10 @@
-.content {
+.centered-content {
   text-align: center;
+  padding-left : 10px;
+  padding-right : 10px;
+}
+
+.content {
   padding-left : 10px;
   padding-right : 10px;
 }
@@ -10,4 +15,11 @@ a {
 
 a:hover {
   color : green;
+}
+#user-table{
+  height : 100%;
+}
+.table-wrapper{
+  overflow-y: scroll;
+  height : 400px;
 }

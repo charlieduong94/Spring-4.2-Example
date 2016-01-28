@@ -33,14 +33,14 @@ public class IndexController{
 	public ModelAndView getWelcomePage(){
 		// retrieve a quote
 		Quote quote = quoteService.getQuote();
-    // Create a ModelAndView object using the welcomePage from "/src/main/webapp/WEB-INF/templates/welcomePage.jsp"
-    // Spring is able to find this because of the properties set in the "application.properties" file
-    ModelAndView model = new ModelAndView("welcomePage");
-    // add objects that can be used in the JSP
-    model.addObject("quoteType", quote.getType());
+    	// Create a ModelAndView object using the welcomePage from "/src/main/webapp/WEB-INF/templates/welcomePage.jsp"
+    	// Spring is able to find this because of the properties set in the "application.properties" file
+    	ModelAndView model = new ModelAndView("welcomePage");
+    	// add objects that can be used in the JSP
+    	model.addObject("quoteType", quote.getType());
 		model.addObject("quoteID", quote.getValue().getId());
 		model.addObject("quote", quote.getValue().getQuote());
-    // return the page
+    	// return the page
 		return model;
 	}
 }

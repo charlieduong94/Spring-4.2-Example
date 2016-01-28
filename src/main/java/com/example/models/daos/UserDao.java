@@ -3,10 +3,7 @@ package com.example.models.daos;
 import java.util.List;
 import com.example.models.User;
 /**
- * This is POJO (Plain Old Java Object) that acts as a simple container for data.
- *
- * The data contained in this object will converted into JSON (JavaScript Object Notation)
- * when sent back from the server.
+ * This is the interface for our data access object.
  * @author charlie
  */
 public interface UserDao {
