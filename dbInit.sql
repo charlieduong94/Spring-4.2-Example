@@ -1,5 +1,5 @@
 create table users(
-	id serial,
+	id int auto_increment,
 	name varchar(50) not null,
 	age int not null,
 	constraint pk primary key(id)

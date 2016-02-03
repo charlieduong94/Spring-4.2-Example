@@ -14,10 +14,10 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 public class DataSourceConfig {
     public static DataSource getDataSource(){
       DriverManagerDataSource dataSource = new DriverManagerDataSource();
-      dataSource.setDriverClassName("org.postgresql.Driver");
-      dataSource.setUrl("jdbc:postgresql://localhost:5432/charlie");
-      dataSource.setUsername("charlie");
-      dataSource.setPassword("postgres");
+      dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+      dataSource.setUrl("jdbc:mysql://localhost:3306/springtest");
+      dataSource.setUsername("root");
+      dataSource.setPassword("root");
       return dataSource;
     }
 }

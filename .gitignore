@@ -4,3 +4,4 @@ target
 demo.iml
 src/main/main.iml
 src/test/test.iml
+src/main/lib
