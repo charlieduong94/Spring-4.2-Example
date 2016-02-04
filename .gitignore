@@ -1,1 +1,5 @@
 build
+.idea
+demo.iml
+target
+.gradle
